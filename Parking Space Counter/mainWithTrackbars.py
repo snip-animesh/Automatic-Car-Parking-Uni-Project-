@@ -11,7 +11,7 @@ cap = cv2.VideoCapture(0)
 with open("CarParkPos", 'rb') as f:
     posList = pickle.load(f)
 
-WIDTH, HEIGHT = 35, 65
+WIDTH, HEIGHT = 85,40
 
 
 def empty(a):
@@ -32,7 +32,9 @@ while True:
     success, img = cap.read()
 
     imgGray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    cv2.imshow("Gray",imgGray)
     imgBlur = cv2.GaussianBlur(imgGray, (3, 3), 1)
+    cv2.imshow("GaussianBlur",imgBlur)
 
     val1 = cv2.getTrackbarPos("Val1", "Vals")
     val2 = cv2.getTrackbarPos("Val2", "Vals")
@@ -43,6 +45,7 @@ while True:
     imgThreshold = cv2.adaptiveThreshold(imgBlur, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
                                          cv2.THRESH_BINARY_INV, val1, val2)
     imgMedian=cv2.medianBlur(imgThreshold,val3)
+
 
     for pos in posList:
         cv2.rectangle(img, pos, (pos[0] + WIDTH, pos[1] + HEIGHT), (255, 0, 255), 2)

@@ -20,3 +20,7 @@ controller - Araay got from main programm . and using this value , Lcd, rgb ,ser
 
 Resources are used before getting real cctv footage . and dataGenerator programm is used before getting real cctv footage to check
 hardware parts response.
+
+
+"Demo Video of Final Project link "
+https://drive.google.com/file/d/16AMruPS40tZNm3t4G5TGBcHca1skBcvq/view?usp=sharing

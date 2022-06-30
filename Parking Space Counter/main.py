@@ -10,12 +10,12 @@ cap = cv2.VideoCapture(0)
 with open("CarParkPos", 'rb') as f:
     posList = pickle.load(f)
 
-WIDTH, HEIGHT = 30, 80
+WIDTH, HEIGHT = 85,40
 kernel = np.ones((3, 3), np.uint8)
 CarYes = (0, 0, 255)
 CarNo = (210, 230, 37)
 TextColor = (230, 98, 37)
-CAR_PIXEL = 1200
+CAR_PIXEL = 1500
 
 
 def check_parking_space(imgPro,img):
@@ -64,7 +64,7 @@ def run():
 
         parks=check_parking_space(imgDilate,img)
 
-        cv2.imshow("Image", img)
+        cv2.imshow("CCTV", img)
         # cv2.imshow("ImageDilate", imgDilate)
         cv2.waitKey(10)
         return parks
