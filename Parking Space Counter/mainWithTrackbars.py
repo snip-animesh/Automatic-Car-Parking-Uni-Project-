@@ -11,7 +11,7 @@ cap = cv2.VideoCapture(0)
 with open("CarParkPos", 'rb') as f:
     posList = pickle.load(f)
 
-WIDTH, HEIGHT = 85,40
+WIDTH, HEIGHT = 80,35
 
 
 def empty(a):

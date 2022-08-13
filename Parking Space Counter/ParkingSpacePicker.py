@@ -4,7 +4,7 @@ import pickle
 cap=cv2.VideoCapture(0)
 
 # width and height of one parking slot
-WIDTH, HEIGHT = 85,40
+WIDTH, HEIGHT = 80,35
 
 try:
     with open("CarParkPos", 'rb') as f:

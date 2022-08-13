@@ -4,7 +4,7 @@ from pyfirmata import Arduino, util, STRING_DATA, pyfirmata
 import  keyboard
 import time
 
-port = 'COM3'
+port = 'COM11'
 
 board = Arduino(port)
 
@@ -39,7 +39,7 @@ def buzzers(val):
     buzzer.write(val)
 
 
-servo(110)
+servo(100)
 time.sleep(1)
 
 while True:
@@ -66,13 +66,13 @@ while True:
 
 
     elif entry == 0 and parkings.count(0) > 0 and outro == 0:  # No car in entry and slots available
-        servo(110)
+        servo(100)
         lcd("Available Slots", available_slots)
 
         rgb([0, 1, 0])
 
     elif parkings.count(0) == 0 and outro == 0:  # No slots available
-        servo(110)
+        servo(100)
         lcd("    NO SLOTS", "    AVAILABLE")
 
         rgb([1, 0, 0])
@@ -90,7 +90,7 @@ while True:
     if keyboard.is_pressed ("space"):
         break
 
-servo(110)
+servo(100)
 rgb([0,0,0])
 buzzers(0)
 lcd("","")
