@@ -15,7 +15,7 @@ kernel = np.ones((3, 3), np.uint8)
 CarYes = (0, 0, 255)
 CarNo = (210, 230, 37)
 TextColor = (230, 98, 37)
-CAR_PIXEL = 1400
+CAR_PIXEL = 1100
 
 
 def check_parking_space(imgPro,img):

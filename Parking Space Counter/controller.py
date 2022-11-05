@@ -4,7 +4,7 @@ from pyfirmata import Arduino, util, STRING_DATA, pyfirmata
 import  keyboard
 import time
 
-port = 'COM11'
+port = 'COM4'
 
 board = Arduino(port)
 
@@ -21,7 +21,7 @@ buzzer = board.get_pin('d:4:o')
 def lcd(firstLine, secondLine):
     board.send_sysex(STRING_DATA, util.str_to_two_byte_iter(firstLine))
     board.send_sysex(STRING_DATA, util.str_to_two_byte_iter(secondLine))
-    print("Display updated")
+    # print("Display updated")
     time.sleep(.5)
 
 
@@ -53,7 +53,7 @@ while True:
     for i in range(0, len(parkings)):
         if parkings[i] == 0:
             available_slots = available_slots + " " + str(i + 1)
-    print(available_slots)
+    # print(available_slots)
     # lcd("Available Slots", available_slots)
 
     # If any car at entry , then displaying at lcd and opening gate or ramaining it closed.
@@ -78,7 +78,7 @@ while True:
         rgb([1, 0, 0])
     if parkings.count(0) == 0 and entry == 1:  # No slots available and car in entry
         buzzers(1)
-        print("buzzers")
+        # print("buzzers")
 
     if outro == 1:
         servo(0)
