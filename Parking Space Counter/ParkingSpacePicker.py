@@ -27,6 +27,7 @@ def mouse_click(events, x, y, flags, params):
 
 while True:
     succ,img = cap.read()
+    img = cv2.resize(img, (695, 341))  # width & height
     for pos in posList:
         cv2.rectangle(img, pos, (pos[0] + WIDTH, pos[1] + HEIGHT), (230, 230, 41), 2)
     cv2.imshow('Image', img)
